@@ -151,8 +151,9 @@ public void CargarRegistrar(){
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(60, 170, 1170, 550);
 
-        jButtonCargar.setBackground(new java.awt.Color(255, 255, 51));
-        jButtonCargar.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
+        jButtonCargar.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonCargar.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
+        jButtonCargar.setForeground(new java.awt.Color(0, 255, 0));
         jButtonCargar.setText("Cargar");
         jButtonCargar.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
@@ -169,7 +170,7 @@ public void CargarRegistrar(){
             }
         });
         getContentPane().add(jButtonCargar);
-        jButtonCargar.setBounds(600, 900, 112, 48);
+        jButtonCargar.setBounds(530, 890, 230, 100);
 
         jButtonRegresarE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N

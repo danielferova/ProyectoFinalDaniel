@@ -89,6 +89,11 @@ public class Tienda extends javax.swing.JFrame {
         jButtonCrearV.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
         jButtonCrearV.setForeground(new java.awt.Color(255, 0, 0));
         jButtonCrearV.setText("Crear Vehículos");
+        jButtonCrearV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrearVActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCrearV);
         jButtonCrearV.setBounds(280, 160, 250, 90);
 
@@ -155,6 +160,16 @@ public class Tienda extends javax.swing.JFrame {
         m.setSize(1290, 900);
         dispose();
     }//GEN-LAST:event_jButtonComprarActionPerformed
+
+    private void jButtonCrearVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearVActionPerformed
+        // TODO add your handling code here:
+        CrearV n = new CrearV();
+        n.show();
+        n.setSize(1290, 1000);
+        dispose();
+        
+        
+    }//GEN-LAST:event_jButtonCrearVActionPerformed
 
     /**
      * @param args the command line arguments

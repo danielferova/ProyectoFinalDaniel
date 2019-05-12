@@ -100,7 +100,7 @@ public class CrearVehiculos extends javax.swing.JFrame {
  */
     private void jButtonCrearAvionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearAvionesActionPerformed
         // TODO add your handling code here:
-        CrearAviones entrada2 = new CrearAviones();
+        CrearV entrada2 = new CrearV();
         entrada2.show();
         entrada2.setSize(1290, 1000);
         dispose();
