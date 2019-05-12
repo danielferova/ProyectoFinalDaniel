@@ -10,7 +10,7 @@ package ClasesdelProyecto;
  * @author danie
  */
 public class Avion extends Vehiculos{
-    //prueba commit 11
+    //prueba commit 11 tratando de hacer avance 10
     int ataque=7, defensa=3, punteria=70;
     int tipoV=5;
     String tipoarma="Arma Basica Avion";
