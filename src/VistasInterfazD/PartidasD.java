@@ -16,12 +16,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import static proyectofinaldaniel.ProyectoFinalDaniel.pathPersona;
-
 /**
  *
  * @author danie
  */
-public class Estadisticas extends javax.swing.JFrame {
+public class PartidasD extends javax.swing.JFrame {
    
     private DefaultTableModel modelo;
     int cont = 0;
@@ -31,13 +30,15 @@ public class Estadisticas extends javax.swing.JFrame {
      * Constructor de mi JFRAME Estadisticas
      * Creates new form Estadisticas
      */
-    public Estadisticas() {
+    public PartidasD() {
         initComponents();
          this.setLocationRelativeTo(null);
         setSize(1490, 1200);
         setTitle("FEROVA GAME");
+        
         CargarRegistrar();
         Cargardatos();
+readBin1();    
     }
     /**
      * Método para colocoar en mi JTABLE
@@ -52,10 +53,10 @@ public void CargarRegistrar(){
   
     
     modelo= new DefaultTableModel(datos, columna);
-    jTableEstadisticas.setModel(modelo);
+    jTableEstadisticas1.setModel(modelo);
     
 }
- public void readBin1(){
+    public void readBin1(){
         contenedor.clear();
         ObjectInputStream binario = null;
         try {
@@ -94,7 +95,7 @@ public void CargarRegistrar(){
                */
             public void Cargardatos(){
                 Persona a;
-                Registrar b;
+              //  Registrar b;
                 for (int i = 0; i < Registrar.contenedor.size(); i++) {
                     a= (Persona)Registrar.contenedor.get(i);
                   //  b= (Registrar) Registrar.contenedor.get(i);
@@ -105,7 +106,7 @@ public void CargarRegistrar(){
                     modelo.setValueAt(a.getV3(), cont, 5);
                      modelo.setValueAt(a.getTipo1(), cont, 2);
                      modelo.setValueAt(a.getTipo2(), cont, 4);
-                             modelo.setValueAt(a.getTipo3(), cont, 6);
+                     modelo.setValueAt(a.getTipo3(), cont, 6);
                      
                     
                     
@@ -126,7 +127,8 @@ public void CargarRegistrar(){
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableEstadisticas = new javax.swing.JTable();
+        jTableEstadisticas1 = new javax.swing.JTable();
+        jButtonCargar = new javax.swing.JButton();
         jButtonRegresarE = new javax.swing.JButton();
         jButtonSalirE = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -135,8 +137,8 @@ public void CargarRegistrar(){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jTableEstadisticas.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
-        jTableEstadisticas.setModel(new javax.swing.table.DefaultTableModel(
+        jTableEstadisticas1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
+        jTableEstadisticas1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -144,10 +146,30 @@ public void CargarRegistrar(){
                 "Nombre", "Nombre V1", "Tipo de Vehículo1", "Nombre V2", "TIpo de Vehículo2", "Nombre V3", "Tipo de Vehículo3"
             }
         ));
-        jScrollPane1.setViewportView(jTableEstadisticas);
+        jScrollPane1.setViewportView(jTableEstadisticas1);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(60, 170, 1170, 550);
+
+        jButtonCargar.setBackground(new java.awt.Color(255, 255, 51));
+        jButtonCargar.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
+        jButtonCargar.setText("Cargar");
+        jButtonCargar.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jButtonCargarAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jButtonCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCargarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCargar);
+        jButtonCargar.setBounds(600, 900, 112, 48);
 
         jButtonRegresarE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -181,7 +203,7 @@ public void CargarRegistrar(){
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 10, 1810, 1300);
+        jLabel1.setBounds(0, 0, 1810, 1310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +228,29 @@ public void CargarRegistrar(){
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirEActionPerformed
 
+    private void jButtonCargarAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jButtonCargarAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCargarAncestorAdded
+
+    private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
+        this.setVisible(false);
+        Registrar R = new Registrar();
+        int fila = jTableEstadisticas1.getSelectedRow();
+        Registrar.jTextFieldNombre.setText(jTableEstadisticas1.getValueAt(fila,0).toString());
+        Registrar.Jmostrar1.setText(jTableEstadisticas1.getValueAt(fila,2).toString());
+        Registrar.jTextFieldV1.setText(jTableEstadisticas1.getValueAt(fila,1).toString());
+        Registrar.Jmostrar2.setText(jTableEstadisticas1.getValueAt(fila,4).toString());
+        Registrar.jTextFieldV2.setText(jTableEstadisticas1.getValueAt(fila,3).toString());
+        Registrar.Jmostrar3.setText(jTableEstadisticas1.getValueAt(fila,6).toString());
+        Registrar.jTextFieldV3.setText(jTableEstadisticas1.getValueAt(fila,5).toString());
+
+        R.show();
+
+        // new NewJFrame().setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCargarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,30 +268,34 @@ public void CargarRegistrar(){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PartidasD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PartidasD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PartidasD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PartidasD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Estadisticas().setVisible(true);
+                new PartidasD().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCargar;
     private javax.swing.JButton jButtonRegresarE;
     private javax.swing.JButton jButtonSalirE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableEstadisticas;
+    private javax.swing.JTable jTableEstadisticas1;
     // End of variables declaration//GEN-END:variables
 }

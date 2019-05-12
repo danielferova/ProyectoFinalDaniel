@@ -11,6 +11,11 @@ import ClasesdelProyecto.CasillaAgua;
 import ClasesdelProyecto.CasillaTerreno;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.util.Random;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -18,13 +23,18 @@ import javax.swing.JButton;
  * @author danie
  */
 public class JuegoTableros extends javax.swing.JFrame {
+    int turno, contp, contmp;
+    boolean gano= false;
+    
   Casilla[][] tablero;
     /**
+     * constructor
      * Creates new form JuegoTableros
      */
     public JuegoTableros() {
         initComponents();
           this.setLocationRelativeTo(null);
+          turno = contp = contmp = 1;
         setTitle("FEROVA GAME");
         //tablero = new Casilla[8][8];
            
@@ -79,11 +89,12 @@ public class JuegoTableros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8x9);
-        jButton8x9.setBounds(760, 210, 140, 60);
+        jButton8x9.setBounds(840, 370, 140, 60);
 
         jButton4x4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4x4.setFont(new java.awt.Font("Dubai Medium", 0, 36)); // NOI18N
         jButton4x4.setForeground(new java.awt.Color(0, 255, 0));
+        jButton4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/tanquepequeño.jpg"))); // NOI18N
         jButton4x4.setText("4 x 4");
         jButton4x4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +102,7 @@ public class JuegoTableros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4x4);
-        jButton4x4.setBounds(760, 70, 140, 60);
+        jButton4x4.setBounds(670, 70, 340, 130);
 
         jButton6x4.setBackground(new java.awt.Color(255, 255, 255));
         jButton6x4.setFont(new java.awt.Font("Dubai Medium", 0, 36)); // NOI18N
@@ -103,7 +114,7 @@ public class JuegoTableros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6x4);
-        jButton6x4.setBounds(760, 140, 140, 60);
+        jButton6x4.setBounds(670, 220, 340, 130);
 
         panelTablero.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -132,41 +143,66 @@ public class JuegoTableros extends javax.swing.JFrame {
     
     
     
-    
+    /**
+     * Método para ir hacia las opciones finales del juego
+     * @param evt 
+     */
     private void jButtonHaciaEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHaciaEActionPerformed
         // TODO add your handling code here:
         OpcionesFinales entrada3 = new OpcionesFinales();
         entrada3.show();
         entrada3.setSize(825, 866);
-       dispose();    
+            dispose();    
     }//GEN-LAST:event_jButtonHaciaEActionPerformed
-    public void setCasilla(int tipoTerreno, int x, int y){
-        tablero[x][y]= null;
-        if (tipoTerreno == 1) {
-            
-            tablero[x][y] = new CasillaAgua();
-        }else{
-            tablero[x][y]= new CasillaMontaña();
-        }
-    }
-
+    /**
+     * Método para mostrar el tablero, código generico
+     * @param filas
+     * @param columnas 
+     */
     public void gTablero(int filas, int columnas){
     BorderLayout b = new BorderLayout();
    
  
         tablero =  new Casilla[filas][columnas];
+        int[][] juego = new int[filas][columnas];
+        Random n = new Random();
          boolean blanco = true;
          System.out.println("filas" + filas);
         for (int i = 0; i<filas; i++){
             for (int j = 0; j<columnas; j++){
-
-                blanco = !blanco;
+                
+                int c = (int)((Math.random()*3)+1);
+                System.out.println(c);
+                switch(c){
+                    case 1: 
+                        juego[i][j]= 1;
+                        tablero[i][j] = new Casilla ();
+                         tablero[i][j].setBounds((50*j), 50*i, 50, 50);
+                          tablero[i][j]= new CasillaTerreno();
+                          break;
+                    case 2:
+                        juego[i][j]= 2;
+                        tablero[i][j] = new Casilla ();
+                         tablero[i][j].setBounds((50*j), 50*i, 50, 50);
+                          tablero[i][j]= new CasillaMontaña();
+                          break;
+                    case 3:
+                        juego[i][j]= 3;
+                        tablero[i][j] = new Casilla ();
+                         tablero[i][j].setBounds((50*j), 50*i, 50, 50);
+                          tablero[i][j]= new CasillaAgua();
+                    break;
+                    default:
+                    break;
+                    
+                }
+                /*blanco = !blanco;
                 tablero[i][j] = new Casilla ();
                tablero[i][j].setSize(50, 50);
                 if (blanco)
                     tablero[i][j].setBackground(Color.white);
                 else
-                    tablero[i][j].setBackground(Color.white);
+                    tablero[i][j].setBackground(Color.white);*/
                // blanco = !blanco;
              //tablero[i][j]= new CasillaTerreno();
               // tablero[i][j].setSize(50, 50);
@@ -184,22 +220,41 @@ public class JuegoTableros extends javax.swing.JFrame {
                 tablero[i][j].setBounds((50*j), 50*i, 50, 50);
                
 
-                this.remove(panelTablero);
-                 this.add(tablero[i][j], BorderLayout.CENTER);
-               this.add(panelTablero);
-                     panelTablero.add(tablero[i][j]);
+              //  this.remove(panelTablero);
+               //  this.add(tablero[i][j], BorderLayout.CENTER);
+               //this.add(panelTablero);
+               
+                    panelTablero.add(tablero[i][j]);
+                   //  tablero[i][j].addActioLsitener(accion);
                //  panelTablero.removeAll();
        //     panelTablero.validate();
+       panelTablero.updateUI();
+       panelTablero.setLayout(new GridLayout(filas, columnas));
             panelTablero.repaint();
-            tablero[i][j].removeAll();
+         //   tablero[i][j].removeAll();
            //tablero[i][j].repaint();
             
+           
+     
+           
             }
-            
+           
             blanco = !blanco;
         }
         
+        int d = (int) (Math.random()*4);
+        int d2 = (int) (Math.random()*4);
+              ImageIcon tanque = new ImageIcon("src/ImagenesD/tanquepequeño.jpg");
+        Icon iconoTanque = new ImageIcon(tanque.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        tablero[d][d2].setIcon(iconoTanque);
+        juego[d][d2] = 5;
         
+         int a = (int) (Math.random()*4);
+        int a2 = (int) (Math.random()*4);
+            ImageIcon avion = new ImageIcon("src/ImagenesD/avionpequeño.jpg");
+        Icon iconoAvion = new ImageIcon(avion.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+         tablero[a][a2].setIcon(iconoAvion);
+        juego[a][a2] = 4;
         
         
         
@@ -221,10 +276,71 @@ public class JuegoTableros extends javax.swing.JFrame {
         
     }*/
 }
-     
+    
+     /*public void hola( Casilla tablero){
+            
+         if(!gano){
+             if(tablero.equals(""))
+             {
+              if(turno*2 == 1)   {
+                  tablero.getIcon("X");
+                  
+                  
+              }
+             }
+         }
+             
+         
+         
+         
+        }*/
+    /*public int lanzardado(){
+        int numero = 0;
+        do{
+            numero = (int) (Math.random()*10);
+            
+                   
+                   
+            
+            
+            
+            
+        }while(numero<1 || numero>6);
+        
+        
+        
+        
+      return numero;
+      
+      
+      
+    } 
+    public void generar(){
+        for (int i = 0; i < 10; i++) {
+            
+        }
+        
+    }    */
+    /**
+     * Método de prueba para numeros random
+     * @param N
+     * @param M 
+     */
+    public void metodoRandom(int N, int M){
+        Random n = new Random();
+        n.nextInt(5);
+        n.nextInt(6);
+        
+        
+    }
+    
     private void jButton4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4x4ActionPerformed
         // TODO add your handling code here:
-         
+        /*ImageIcon tanque = new ImageIcon("src/ImagenesD/tanquepequeño.jpg");
+        Icon iconoTanque = new ImageIcon(tanque.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+        tablero[filas][columnas].setIcon(iconoTanque);
+        juego[filas][columnas] = 2;*/
+        
         gTablero(4, 4);
        
         
@@ -267,6 +383,7 @@ public class JuegoTableros extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JuegoTableros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

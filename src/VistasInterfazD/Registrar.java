@@ -6,8 +6,15 @@
 package VistasInterfazD;
 
 import ClasesdelProyecto.Persona;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static proyectofinaldaniel.ProyectoFinalDaniel.pathPersona;
 
 /**
  *
@@ -28,6 +35,29 @@ public class Registrar extends javax.swing.JFrame {
          setSize(1290, 1000);
         setTitle("FEROVA GAME");
     }
+      public void createBin(){
+        ObjectOutputStream binario = null;
+        try {
+            String nameFile = jTextFieldNombre.getText();
+            File file = new File(nameFile);
+            Persona persona = (Persona) contenedor.getLast();
+           
+            binario = new ObjectOutputStream(new FileOutputStream(pathPersona+persona.getNombre()+".person"));
+            binario.writeObject(persona);
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+           // Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                binario.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -269,6 +299,14 @@ public class Registrar extends javax.swing.JFrame {
         String tipo2 = Jmostrar2.getText();
         String tipo3 = Jmostrar3.getText();
         //NOMBRE DE LA PERSONA ATRUBUTOS
+        
+            //nombre de la clase tanque y vehiculos
+     //   Vehiculos v = new Tanque();
+       // contenedor.add(v);
+        //nombre de la clase avion y vehiculos
+        // Vehiculos ve = new Avion();
+        //contenedor.add(ve);
+        
         Persona  person = new Persona(nombre, v1, v2, v3, tipo1, tipo2, tipo3);
         contenedor.add(person);
         //Limpia
@@ -276,6 +314,10 @@ public class Registrar extends javax.swing.JFrame {
         jTextFieldV1.setText("");
         jTextFieldV2.setText("");
         jTextFieldV3.setText("");      
+        
+            Persona p = (Persona)contenedor.getLast();
+        createBin();
+        
     }//GEN-LAST:event_jButtonIRActionPerformed
 
     /*private void comboItemStateChanged(java.awt.event.ItemEvent evt) {                                       
@@ -346,9 +388,9 @@ public class Registrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Jmostrar1;
-    private javax.swing.JTextField Jmostrar2;
-    private javax.swing.JTextField Jmostrar3;
+    public static javax.swing.JTextField Jmostrar1;
+    public static javax.swing.JTextField Jmostrar2;
+    public static javax.swing.JTextField Jmostrar3;
     private javax.swing.JButton jButtonIR;
     private javax.swing.JButton jButtonRegresarTipos;
     private javax.swing.JComboBox<String> jComboBoxV1;
@@ -362,9 +404,9 @@ public class Registrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldV1;
-    private javax.swing.JTextField jTextFieldV2;
-    private javax.swing.JTextField jTextFieldV3;
+    public static javax.swing.JTextField jTextFieldNombre;
+    public static javax.swing.JTextField jTextFieldV1;
+    public static javax.swing.JTextField jTextFieldV2;
+    public static javax.swing.JTextField jTextFieldV3;
     // End of variables declaration//GEN-END:variables
 }

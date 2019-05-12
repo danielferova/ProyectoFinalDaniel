@@ -128,6 +128,10 @@ public class Iniciar extends javax.swing.JFrame {
  */
     private void jButtonTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTiendaActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
         Tienda entrada4 = new Tienda();
         entrada4.show();
         entrada4.setSize(825, 866);
@@ -147,6 +151,21 @@ public class Iniciar extends javax.swing.JFrame {
 
     private void jButtonTienda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTienda1ActionPerformed
         // TODO add your handling code here:
+        
+      Registrar principa2 = new Registrar();
+      principa2.show();
+      principa2.setVisible(false);
+      
+      Estadisticas principa3 = new Estadisticas();
+      principa3.show();
+      principa3.setVisible(false);
+      
+      
+      PartidasD principal = new PartidasD();
+      principal.show();
+      this.setVisible(false); 
+        
+        
     }//GEN-LAST:event_jButtonTienda1ActionPerformed
 
     /**

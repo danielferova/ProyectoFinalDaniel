@@ -6,6 +6,7 @@
 package proyectofinaldaniel;
 
 import VistasInterfazD.Bienvenido;
+import java.io.File;
 
 /**
  *
@@ -21,6 +22,19 @@ public class ProyectoFinalDaniel {
          Bienvenido entrada = new Bienvenido();
          entrada.show();
          entrada.setSize(1190, 860);
+             File createCarpeta = new File("Persona");
+        
+        
+        if (!createCarpeta.exists()) {
+            createCarpeta.mkdir();
+            
+        }
+        
+    pathPersona = createCarpeta.getAbsolutePath()+File.separatorChar;
+    }
+    public static String pathPersona;
+         
+         
     }
     
-}
+
