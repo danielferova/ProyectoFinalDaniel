@@ -6,8 +6,10 @@
 package VistasInterfazD;
 
 import ClasesdelProyecto.Persona;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static proyectofinaldaniel.ProyectoFinalDaniel.pathPersona;
+import ClasesdelProyecto.html;
 
 /**
  *
@@ -24,7 +27,9 @@ public class Registrar extends javax.swing.JFrame {
   //  ArrayList<Persona> lista = new ArrayList<Persona>();
     public static LinkedList contenedor = new LinkedList();
     public int buscar;
-    
+    File lista = new File("reporte.html");
+    html kk = new html();
+    public ArrayList<Persona> ls = new ArrayList<>();
     /**
      * Constructor del JFRAME Registrar
      * Creates new form Registrar
@@ -60,6 +65,30 @@ public class Registrar extends javax.swing.JFrame {
         }
         
     }
+      public void html(){
+          
+          try {
+              FileWriter jj = new FileWriter(lista);
+              BufferedWriter bw = new BufferedWriter(jj);
+             
+             kk.generarEncabezado("Vehiculos");
+             kk.ventana("Nombre", "Vehiculo 1", "Vehiculo 2", "Vehiculo 3");
+             bw.write(kk.salida);
+             bw.newLine();
+             for(int i =0; i<ls.size();i++){
+                  kk.generarFilaHTML(ls.get(i).nombre, ls.get(i).v1, ls.get(i).v2, ls.get(i).v3);
+                  bw.write(kk.filatxt);
+                  bw.newLine();  
+              }
+             kk.generarCola();
+             bw.write(kk.cola);
+             bw.newLine();
+             
+             bw.close();
+             jj.close();
+          } catch (Exception e) {
+          }
+      }
    
 
     /**
@@ -238,7 +267,7 @@ public class Registrar extends javax.swing.JFrame {
  */
     private void jButtonRegresarTiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarTiposActionPerformed
         // TODO add your handling code here:
-        //Persona persona = new Persona(jTextFieldNombre.getText() );
+        //Persona persona = new Persona(jTextFieldNombre.getText());
         //lista.add(persona);
          this.setVisible(false);
 
@@ -292,6 +321,7 @@ public class Registrar extends javax.swing.JFrame {
         
         Persona  person = new Persona(nombre, v1, v2, v3, tipo1, tipo2, tipo3);
         contenedor.add(person);
+        ls.add(person);
         //Limpia
         jTextFieldNombre.setText("");
         jTextFieldV1.setText("");
@@ -300,6 +330,7 @@ public class Registrar extends javax.swing.JFrame {
         
             Persona p = (Persona)contenedor.getLast();
         createBin();
+        html();
         
     }//GEN-LAST:event_jButtonIRActionPerformed
 

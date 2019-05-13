@@ -108,6 +108,7 @@ public class OpcionesFinales extends javax.swing.JFrame {
  */
     private void jButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportesActionPerformed
         // TODO add your handling code here:
+      
         //exportar HTML
     }//GEN-LAST:event_jButtonReportesActionPerformed
 /**

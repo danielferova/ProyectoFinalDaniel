@@ -12,8 +12,8 @@ import java.io.Serializable;
  * @author danie
  */
 public class Persona implements Serializable {
-    String nombre;
-    String v1, v2, v3, tipo1, tipo2, tipo3;
+    public String nombre;
+    public String v1, v2, v3, tipo1, tipo2, tipo3;
 /**
  * Retorna tipo1
  * @return 
@@ -21,7 +21,7 @@ public class Persona implements Serializable {
     public String getTipo1() {
         return tipo1;
     }
-/**
+/**1
  * Establece tipo1
  * @param tipo1 
  */
