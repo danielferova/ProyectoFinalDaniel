@@ -76,15 +76,15 @@ public class CrearArmas extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 450, 100));
 
         jButtonArmas1.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonArmas1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
+        jButtonArmas1.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jButtonArmas1.setForeground(new java.awt.Color(0, 255, 0));
-        jButtonArmas1.setText("Armas");
+        jButtonArmas1.setText("Ver Armas Creadas");
         jButtonArmas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonArmas1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonArmas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, 180, 100));
+        getContentPane().add(jButtonArmas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 660, 340, 100));
 
         jButtonRegresarTipos.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarTipos.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -95,7 +95,7 @@ public class CrearArmas extends javax.swing.JFrame {
                 jButtonRegresarTiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 680, 260, 100));
+        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 260, 100));
 
         jButtonGuardarArma.setBackground(new java.awt.Color(255, 255, 255));
         jButtonGuardarArma.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -106,7 +106,7 @@ public class CrearArmas extends javax.swing.JFrame {
                 jButtonGuardarArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGuardarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 680, 510, 110));
+        getContentPane().add(jButtonGuardarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 640, 410, 130));
 
         jTextFieldNombreArma.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombreArma.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N

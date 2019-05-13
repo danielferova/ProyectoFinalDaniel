@@ -79,7 +79,7 @@ public class CrearV extends javax.swing.JFrame {
                 jButtonRegresarTiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 680, 260, 100));
+        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, 260, 100));
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 255, 0));
@@ -101,15 +101,15 @@ public class CrearV extends javax.swing.JFrame {
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 510, -1));
 
         jButtonVehiculoscargar.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonVehiculoscargar.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jButtonVehiculoscargar.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
         jButtonVehiculoscargar.setForeground(new java.awt.Color(51, 255, 0));
-        jButtonVehiculoscargar.setText("Vehículos");
+        jButtonVehiculoscargar.setText("Ver Vehículos");
         jButtonVehiculoscargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVehiculoscargarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVehiculoscargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 170, 90));
+        getContentPane().add(jButtonVehiculoscargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 660, 390, 120));
 
         jLabel10.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +225,7 @@ public class CrearV extends javax.swing.JFrame {
                 jButtonGuardarVActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGuardarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 670, 510, 110));
+        getContentPane().add(jButtonGuardarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 410, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

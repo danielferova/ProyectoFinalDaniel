@@ -43,7 +43,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="680" width="260" height="100"/>
+          <AbsoluteConstraints x="30" y="680" width="260" height="100"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -114,19 +114,19 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="18" style="1"/>
+          <Font name="Arial Black" size="36" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="ff" red="33" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Veh&#xed;culos"/>
+        <Property name="text" type="java.lang.String" value="Ver Veh&#xed;culos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVehiculoscargarActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="950" y="540" width="170" height="90"/>
+          <AbsoluteConstraints x="790" y="660" width="390" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -410,7 +410,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="370" y="670" width="510" height="110"/>
+          <AbsoluteConstraints x="340" y="660" width="410" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
