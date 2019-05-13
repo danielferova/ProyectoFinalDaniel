@@ -13,7 +13,9 @@ import java.awt.Color;
  */
 public class CasillaMontaña extends Casilla{
 
-    
+    /**
+     * Consttructor de clase de casillamontaña
+     */
      public CasillaMontaña(){
     
         this.setBackground(Color.green);

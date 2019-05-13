@@ -12,6 +12,9 @@ import java.awt.Color;
  * @author danie
  */
 public class CasillaTerreno extends Casilla{
+    /**
+     * Constructor de Terreno
+     */
     public CasillaTerreno(){
         this.setBackground(Color.white);
     }

@@ -39,14 +39,13 @@ public class OpcionesJuego extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Seleccione alguna opción");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(210, 10, 410, 70);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 410, 70));
 
         jButtonSalirOP.setBackground(new java.awt.Color(0, 0, 0));
         jButtonSalirOP.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -57,8 +56,7 @@ public class OpcionesJuego extends javax.swing.JFrame {
                 jButtonSalirOPActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalirOP);
-        jButtonSalirOP.setBounds(510, 660, 250, 90);
+        getContentPane().add(jButtonSalirOP, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 660, 250, 90));
 
         jButtonJJ.setBackground(new java.awt.Color(0, 0, 0));
         jButtonJJ.setFont(new java.awt.Font("Haettenschweiler", 3, 24)); // NOI18N
@@ -69,8 +67,7 @@ public class OpcionesJuego extends javax.swing.JFrame {
                 jButtonJJActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonJJ);
-        jButtonJJ.setBounds(240, 330, 350, 120);
+        getContentPane().add(jButtonJJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 350, 120));
 
         jButtonRTienda.setBackground(new java.awt.Color(0, 0, 0));
         jButtonRTienda.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -81,8 +78,7 @@ public class OpcionesJuego extends javax.swing.JFrame {
                 jButtonRTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRTienda);
-        jButtonRTienda.setBounds(50, 660, 250, 90);
+        getContentPane().add(jButtonRTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 250, 90));
 
         jButtonJC.setBackground(new java.awt.Color(0, 0, 0));
         jButtonJC.setFont(new java.awt.Font("Haettenschweiler", 3, 24)); // NOI18N
@@ -93,12 +89,10 @@ public class OpcionesJuego extends javax.swing.JFrame {
                 jButtonJCActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonJC);
-        jButtonJC.setBounds(230, 150, 350, 120);
+        getContentPane().add(jButtonJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 350, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/Nacis.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 800, 800);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

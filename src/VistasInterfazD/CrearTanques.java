@@ -224,7 +224,7 @@ public class CrearTanques extends javax.swing.JFrame {
         //lista.add(persona);
         this.setVisible(false);
 
-        new CrearVehiculos ().setVisible(true);
+        new Instrucciones ().setVisible(true);
 
         setSize(1290, 1000);
         dispose();

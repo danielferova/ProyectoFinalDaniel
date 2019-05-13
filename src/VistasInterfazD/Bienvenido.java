@@ -40,7 +40,7 @@ public class Bienvenido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonSalir1.setBackground(new java.awt.Color(255, 255, 255));
         ButtonSalir1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 36)); // NOI18N
@@ -51,22 +51,24 @@ public class Bienvenido extends javax.swing.JFrame {
                 ButtonSalir1ActionPerformed(evt);
             }
         });
-        getContentPane().add(ButtonSalir1);
-        ButtonSalir1.setBounds(50, 480, 520, 130);
+        getContentPane().add(ButtonSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 520, 130));
 
         lblBienvenidos.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
         lblBienvenidos.setForeground(new java.awt.Color(0, 255, 0));
         lblBienvenidos.setText("! Bienvenido al juego de batalla \"FEROVA\" game !");
         lblBienvenidos.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(lblBienvenidos);
-        lblBienvenidos.setBounds(50, 690, 1030, 45);
+        getContentPane().add(lblBienvenidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 690, 1030, -1));
 
         jButtonInstrucciones.setBackground(new java.awt.Color(255, 255, 255));
         jButtonInstrucciones.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 36)); // NOI18N
         jButtonInstrucciones.setForeground(new java.awt.Color(51, 255, 51));
         jButtonInstrucciones.setText("2. INSTRUCCIONES");
-        getContentPane().add(jButtonInstrucciones);
-        jButtonInstrucciones.setBounds(50, 320, 520, 130);
+        jButtonInstrucciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInstruccionesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 520, 130));
 
         ButtonJugar.setBackground(new java.awt.Color(255, 255, 255));
         ButtonJugar.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 48)); // NOI18N
@@ -77,12 +79,10 @@ public class Bienvenido extends javax.swing.JFrame {
                 ButtonJugarActionPerformed(evt);
             }
         });
-        getContentPane().add(ButtonJugar);
-        ButtonJugar.setBounds(70, 100, 480, 180);
+        getContentPane().add(ButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 480, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-10, 0, 1270, 800);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1270, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,6 +97,8 @@ public class Bienvenido extends javax.swing.JFrame {
         entrada1.show();
         entrada1.setSize(825, 866);
         dispose();
+        
+        
     }//GEN-LAST:event_ButtonJugarActionPerformed
 /**
  * Método para salir del juego
@@ -106,6 +108,14 @@ public class Bienvenido extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_ButtonSalir1ActionPerformed
+
+    private void jButtonInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInstruccionesActionPerformed
+        // TODO add your handling code here:
+        Instrucciones i = new Instrucciones();
+        i.show();
+        i.setSize(1390, 860);
+        dispose();
+    }//GEN-LAST:event_jButtonInstruccionesActionPerformed
 
     /**
      * @param args the command line arguments

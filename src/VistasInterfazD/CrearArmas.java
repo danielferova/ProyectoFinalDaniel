@@ -5,14 +5,27 @@
  */
 package VistasInterfazD;
 
+import ClasesdelProyecto.ArmasD;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
+import java.util.Formatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static proyectofinaldaniel.ProyectoFinalDaniel.pathArmasD;
+import static VistasInterfazD.CrearArmas.contenedor2;
+import static VistasInterfazD.CrearArmas.jTextFieldNombreArma;
 
 /**
  *
  * @author danie
  */
 public class CrearArmas extends javax.swing.JFrame {
- public static LinkedList contenedor = new LinkedList();
+ public static LinkedList contenedor2 = new LinkedList();
     public int buscar;
     /**
      * Constructor de mi JFRAME CrearArmas
@@ -36,12 +49,13 @@ public class CrearArmas extends javax.swing.JFrame {
 
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButtonArmas1 = new javax.swing.JButton();
         jButtonRegresarTipos = new javax.swing.JButton();
         jButtonGuardarArma = new javax.swing.JButton();
-        jTextFieldV1 = new javax.swing.JTextField();
-        jTextFieldV2 = new javax.swing.JTextField();
-        jTextFieldV3 = new javax.swing.JTextField();
-        jTextFieldV4 = new javax.swing.JTextField();
+        jTextFieldNombreArma = new javax.swing.JTextField();
+        jTextFielAtaqueA = new javax.swing.JTextField();
+        jTextFielPunteriaA = new javax.swing.JTextField();
+        jTextFieldCostoA = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -49,19 +63,28 @@ public class CrearArmas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("COSTO DEL ARMA:");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(190, 540, 420, 40);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 420, -1));
 
         jLabel8.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 48)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 255, 0));
         jLabel8.setText("Creación de Armas");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(470, 80, 450, 100);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 450, 100));
+
+        jButtonArmas1.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonArmas1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
+        jButtonArmas1.setForeground(new java.awt.Color(0, 255, 0));
+        jButtonArmas1.setText("Armas");
+        jButtonArmas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonArmas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonArmas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 510, 180, 100));
 
         jButtonRegresarTipos.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarTipos.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -72,8 +95,7 @@ public class CrearArmas extends javax.swing.JFrame {
                 jButtonRegresarTiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarTipos);
-        jButtonRegresarTipos.setBounds(60, 680, 260, 100);
+        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 680, 260, 100));
 
         jButtonGuardarArma.setBackground(new java.awt.Color(255, 255, 255));
         jButtonGuardarArma.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -84,123 +106,137 @@ public class CrearArmas extends javax.swing.JFrame {
                 jButtonGuardarArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGuardarArma);
-        jButtonGuardarArma.setBounds(490, 680, 510, 110);
+        getContentPane().add(jButtonGuardarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 680, 510, 110));
 
-        jTextFieldV1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldV1.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
-        jTextFieldV1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldV1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNombreArma.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNombreArma.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
+        jTextFieldNombreArma.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNombreArma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldV1ActionPerformed(evt);
+                jTextFieldNombreArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldV1);
-        jTextFieldV1.setBounds(480, 300, 310, 40);
+        getContentPane().add(jTextFieldNombreArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 310, -1));
 
-        jTextFieldV2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldV2.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
-        jTextFieldV2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldV2.addActionListener(new java.awt.event.ActionListener() {
+        jTextFielAtaqueA.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFielAtaqueA.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
+        jTextFielAtaqueA.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFielAtaqueA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldV2ActionPerformed(evt);
+                jTextFielAtaqueAActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldV2);
-        jTextFieldV2.setBounds(480, 370, 310, 40);
+        getContentPane().add(jTextFielAtaqueA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 310, -1));
 
-        jTextFieldV3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldV3.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
-        jTextFieldV3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldV3.addActionListener(new java.awt.event.ActionListener() {
+        jTextFielPunteriaA.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFielPunteriaA.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
+        jTextFielPunteriaA.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFielPunteriaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldV3ActionPerformed(evt);
+                jTextFielPunteriaAActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldV3);
-        jTextFieldV3.setBounds(480, 450, 310, 40);
+        getContentPane().add(jTextFielPunteriaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 310, -1));
 
-        jTextFieldV4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldV4.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
-        jTextFieldV4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldV4.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCostoA.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCostoA.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
+        jTextFieldCostoA.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCostoA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldV4ActionPerformed(evt);
+                jTextFieldCostoAActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldV4);
-        jTextFieldV4.setBounds(480, 540, 310, 40);
+        getContentPane().add(jTextFieldCostoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, 310, -1));
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Ingrese puntería:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(200, 450, 420, 40);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 420, -1));
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ingrese ataque:");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(220, 370, 420, 40);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 420, -1));
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese nombre del arma:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 300, 420, 40);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 420, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/arma.jpg"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(390, 30, 560, 220);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 560, 220));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1810, 1300);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldV1ActionPerformed
+    
+    /**
+     * Método para el binario
+     */
+      public void createBin(){
+        ObjectOutputStream binario = null;
+        try {
+            String nameFile = jTextFieldNombreArma.getText();
+            File file = new File(nameFile);
+            ArmasD gun = (ArmasD) contenedor2.getLast();
+           
+            binario = new ObjectOutputStream(new FileOutputStream(pathArmasD+gun.getNombreA()+".ar"));
+            binario.writeObject(gun);
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+           // Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                binario.close();
+            } catch (IOException ex) {
+                Logger.getLogger(CrearArmas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
+    private void jTextFieldNombreArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreArmaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldV1ActionPerformed
+    }//GEN-LAST:event_jTextFieldNombreArmaActionPerformed
 
-    private void jTextFieldV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldV2ActionPerformed
+    private void jTextFielAtaqueAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFielAtaqueAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldV2ActionPerformed
+    }//GEN-LAST:event_jTextFielAtaqueAActionPerformed
 
-    private void jTextFieldV3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldV3ActionPerformed
+    private void jTextFielPunteriaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFielPunteriaAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldV3ActionPerformed
+    }//GEN-LAST:event_jTextFielPunteriaAActionPerformed
 
-    private void jTextFieldV4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldV4ActionPerformed
+    private void jTextFieldCostoAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCostoAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldV4ActionPerformed
+    }//GEN-LAST:event_jTextFieldCostoAActionPerformed
 /**
  * Método para guardar arma creada
  * @param evt 
  */
     private void jButtonGuardarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarArmaActionPerformed
         // TODO add your handling code here:
-        JuegoTableros entrada2 = new JuegoTableros();
-        entrada2.show();
-        entrada2.setSize(1290, 1000);
-        dispose();
-
-        /*Sring nombre = jTextFieldNombre.getText();
-        String v1 = jTextFieldV1.getText();
-        String v2 = jTextFieldV2.getText();
-        String v3 = jTextFieldV3.getText();
-        String tipo1 = Jmostrar1.getText();
-        String tipo2 = Jmostrar2.getText();
-        String tipo3 = Jmostrar3.getText();
-        //NOMBRE DE LA PERSONA ATRUBUTOS
-        Persona  person = new Persona(nombre, v1, v2, v3, tipo1, tipo2, tipo3);
-        contenedor.add(person);
+    
+        String nombreA = jTextFieldNombreArma.getText();
+        String punteriaA = jTextFielPunteriaA.getText();
+        String ataqueA = jTextFielAtaqueA.getText();
+        String costoA = jTextFieldCostoA.getText();
+  
+        ArmasD  w = new ArmasD (nombreA, punteriaA, ataqueA, costoA);
+        contenedor2.add(w);
         //Limpia
-        jTextFieldNombre.setText("");
-        jTextFieldV1.setText("");
-        jTextFieldV2.setText("");
-        jTextFieldV3.setText("");*/
+       
+        jTextFieldNombreArma.setText("");
+        jTextFielPunteriaA.setText("");
+        jTextFielAtaqueA.setText("");
+           jTextFieldCostoA.setText("");
+           
+           
+             ArmasD arma = (ArmasD)contenedor2.getLast();
+        createBin();
     }//GEN-LAST:event_jButtonGuardarArmaActionPerformed
 /**
  * Botón para regresar a mi JFRAME Tienda
@@ -216,22 +252,23 @@ public class CrearArmas extends javax.swing.JFrame {
 
          setSize(825, 866);
           dispose();
-        /*  String nombre = jTextFieldNombre.getText();
-        String v1 = jTextFieldV1.getText();
-        String v2 = jTextFieldV2.getText();
-        String v3 = jTextFieldV3.getText();
-        String tipo1 = Jmostrar1.getText();
-        String tipo2 = Jmostrar2.getText();
-        String tipo3 = Jmostrar3.getText();
-        //NOMBRE DE LA PERSONA ATRUBUTOS
-        Persona  person = new Persona(nombre, v1, v2, v3, tipo1, tipo2, tipo3);
-        contenedor.add(person);
-        //Limpia
-        jTextFieldNombre.setText("");
-        jTextFieldV1.setText("");
-        jTextFieldV2.setText("");
-        jTextFieldV3.setText("");*/
+        
     }//GEN-LAST:event_jButtonRegresarTiposActionPerformed
+/**
+ * Método para ir a donde estan guardas las armas
+ * @param evt 
+ */
+    private void jButtonArmas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonArmas1ActionPerformed
+
+        CrearArmas d = new CrearArmas();
+        d.show();
+        d.setVisible(false);
+
+        this.setVisible(false);
+        new AEstadisticas().setVisible(true);// TODO add your handling code here:
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonArmas1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +306,7 @@ public class CrearArmas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonArmas1;
     private javax.swing.JButton jButtonGuardarArma;
     private javax.swing.JButton jButtonRegresarTipos;
     private javax.swing.JLabel jLabel1;
@@ -278,9 +316,9 @@ public class CrearArmas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextFieldV1;
-    private javax.swing.JTextField jTextFieldV2;
-    private javax.swing.JTextField jTextFieldV3;
-    private javax.swing.JTextField jTextFieldV4;
+    public static javax.swing.JTextField jTextFielAtaqueA;
+    public static javax.swing.JTextField jTextFielPunteriaA;
+    public static javax.swing.JTextField jTextFieldCostoA;
+    public static javax.swing.JTextField jTextFieldNombreArma;
     // End of variables declaration//GEN-END:variables
 }

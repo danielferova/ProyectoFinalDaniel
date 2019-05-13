@@ -38,13 +38,12 @@ public class Comprar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 3, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 255, 0));
         jLabel4.setText("COMPRAR");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 50, 470, 40);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 470, 40));
 
         jButtonrTienda.setBackground(new java.awt.Color(255, 255, 255));
         jButtonrTienda.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -55,8 +54,7 @@ public class Comprar extends javax.swing.JFrame {
                 jButtonrTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonrTienda);
-        jButtonrTienda.setBounds(40, 620, 260, 100);
+        getContentPane().add(jButtonrTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 260, 100));
 
         jButtonComprarBoots.setBackground(new java.awt.Color(255, 255, 255));
         jButtonComprarBoots.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -67,8 +65,7 @@ public class Comprar extends javax.swing.JFrame {
                 jButtonComprarBootsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonComprarBoots);
-        jButtonComprarBoots.setBounds(100, 450, 450, 120);
+        getContentPane().add(jButtonComprarBoots, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 450, 120));
 
         jButtonComprarV.setBackground(new java.awt.Color(255, 255, 255));
         jButtonComprarV.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -79,8 +76,7 @@ public class Comprar extends javax.swing.JFrame {
                 jButtonComprarVActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonComprarV);
-        jButtonComprarV.setBounds(50, 310, 560, 120);
+        getContentPane().add(jButtonComprarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 560, 120));
 
         jButtonComprarArmas.setBackground(new java.awt.Color(255, 255, 255));
         jButtonComprarArmas.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -91,34 +87,50 @@ public class Comprar extends javax.swing.JFrame {
                 jButtonComprarArmasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonComprarArmas);
-        jButtonComprarArmas.setBounds(110, 170, 450, 120);
+        getContentPane().add(jButtonComprarArmas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 450, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1810, 860);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 860));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Método para ir a comprar las armas
+ * @param evt 
+ */
     private void jButtonComprarArmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarArmasActionPerformed
         // TODO add your handling code here:
-        JuegoTableros entrada2 = new JuegoTableros();
-        entrada2.show();
-        entrada2.setSize(1290, 1000);
-        dispose();
+            CrearArmas d = new CrearArmas();
+        d.show();
+        d.setVisible(false);
 
-     
+        AEstadisticas i = new AEstadisticas();
+        i.show();
+       this.setVisible(false); 
     }//GEN-LAST:event_jButtonComprarArmasActionPerformed
-
+/**
+ * Método para ir a comprar las armas
+ * @param evt 
+ */
     private void jButtonComprarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarVActionPerformed
         // TODO add your handling code here:
+        CrearV u = new CrearV();
+        u.show();
+        u.setVisible(false);
+        
+        VEstadisticas t = new VEstadisticas();
+        t.show();
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonComprarVActionPerformed
 
     private void jButtonComprarBootsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarBootsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonComprarBootsActionPerformed
-
+/**
+ * Método para ir a tienda
+ * @param evt 
+ */
     private void jButtonrTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonrTiendaActionPerformed
         // TODO add your handling code here:
        

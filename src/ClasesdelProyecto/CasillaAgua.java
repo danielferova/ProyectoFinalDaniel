@@ -14,7 +14,9 @@ import java.awt.Color;
 public class CasillaAgua extends Casilla {
  
 
-   
+   /**
+    * Constructor de agua
+    */
 public CasillaAgua(){
     
         this.setBackground(Color.blue);

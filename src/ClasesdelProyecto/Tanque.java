@@ -10,6 +10,7 @@ package ClasesdelProyecto;
  * @author danie
  */
 public class Tanque extends Vehiculos {
+    //Atributos
      int ataque=10, defensa=6, punteria=60;
     int tipoV=4;
     String tipoarma="Arma Basica Tanque";

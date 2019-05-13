@@ -23,16 +23,22 @@ public class ProyectoFinalDaniel {
          entrada.show();
          entrada.setSize(1190, 860);
              File createCarpeta = new File("Persona");
-        
-        
+             File createCarpeta1 = new File ("ArmasD");
+             File createCapeta2 = new File("VehiculosD");        
         if (!createCarpeta.exists()) {
             createCarpeta.mkdir();
             
         }
         
     pathPersona = createCarpeta.getAbsolutePath()+File.separatorChar;
+    pathArmasD = createCarpeta1.getAbsolutePath()+File.separatorChar;
+    pathVehiculosD = createCapeta2.getAbsolutePath()+File.separatorChar;
     }
     public static String pathPersona;
+    public static String pathArmasD; 
+    public static String pathVehiculosD;
+    
+    
          
          
     }

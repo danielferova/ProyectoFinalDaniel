@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,10 +11,13 @@ package ClasesdelProyecto;
  */
 public class Avion extends Vehiculos{
     //prueba commit 11 tratando de hacer avance 10 porque el master no daaaa
+    //ATRIBUTOS
     int ataque=7, defensa=3, punteria=70;
     int tipoV=5;
     String tipoarma="Arma Basica Avion";
-    
+    /**
+     * Constructor 1
+     */
     public Avion(){
         hp=50+((nivel-1)*50);
         pp = 5;
@@ -26,23 +29,23 @@ public class Avion extends Vehiculos{
         tipoV=5;
         arma=tipoarma;
     }
+    /**
+     * Constructor de avion
+     * @param hp
+     * @param pp
+     * @param nivel
+     * @param experiencia
+     * @param nombre
+     * @param arma 
+     */
     public Avion(int hp, int pp, int nivel, int experiencia, String nombre, String arma){
         super(hp,pp,nivel,experiencia,nombre,arma);
         ataque=7;
         defensa=3;
         punteria=70;
     }
-    public Avion(String nombre){
-       super(nombre);
-        hp=50;
-        pp = 5;
-        nivel = 1;
-        experiencia = 0;
-        ataque=7;
-        defensa=3;
-        punteria=70;
-        tipoV=5;
-    }
+    
+    
 
     @Override
     String getVehiculo() {

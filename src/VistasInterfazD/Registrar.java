@@ -35,6 +35,9 @@ public class Registrar extends javax.swing.JFrame {
          setSize(1290, 1000);
         setTitle("FEROVA GAME");
     }
+    /**
+     * Método para crear Binario
+     */
       public void createBin(){
         ObjectOutputStream binario = null;
         try {
@@ -90,7 +93,7 @@ public class Registrar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxV1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         jComboBoxV1.setForeground(new java.awt.Color(255, 0, 51));
@@ -105,8 +108,7 @@ public class Registrar extends javax.swing.JFrame {
                 jComboBoxV1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxV1);
-        jComboBoxV1.setBounds(680, 270, 160, 42);
+        getContentPane().add(jComboBoxV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 160, -1));
 
         jButtonIR.setBackground(new java.awt.Color(255, 255, 255));
         jButtonIR.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -117,8 +119,7 @@ public class Registrar extends javax.swing.JFrame {
                 jButtonIRActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIR);
-        jButtonIR.setBounds(460, 620, 510, 110);
+        getContentPane().add(jButtonIR, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 510, 110));
 
         jButtonRegresarTipos.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarTipos.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -129,44 +130,37 @@ public class Registrar extends javax.swing.JFrame {
                 jButtonRegresarTiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarTipos);
-        jButtonRegresarTipos.setBounds(30, 660, 180, 70);
+        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 180, 70));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Ingrese nombre del tercer vehículo:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(40, 450, 560, 50);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 560, 50));
 
         jLabel6.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Ingrese nombre del primer vehículo:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(40, 210, 560, 50);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 560, 50));
 
         jLabel7.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 0));
         jLabel7.setText("Ingrese nombre del segundo vehículo:");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(30, 330, 600, 50);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 600, 50));
 
         jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("*NOTA:  Para registrar su nombre  y el de los vehículos presione  en el botón REGISTRAR.");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(780, 0, 340, 120);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 340, 120));
 
         jLabel8.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 48)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Vehículos");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(380, 140, 380, 50);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 380, 50));
 
         Jmostrar1.setBackground(new java.awt.Color(255, 255, 255));
         Jmostrar1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         Jmostrar1.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(Jmostrar1);
-        Jmostrar1.setBounds(890, 270, 230, 40);
+        getContentPane().add(Jmostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 230, -1));
 
         jComboBoxV2.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         jComboBoxV2.setForeground(new java.awt.Color(255, 0, 51));
@@ -176,20 +170,17 @@ public class Registrar extends javax.swing.JFrame {
                 jComboBoxV2ItemStateChanged(evt);
             }
         });
-        getContentPane().add(jComboBoxV2);
-        jComboBoxV2.setBounds(690, 390, 160, 42);
+        getContentPane().add(jComboBoxV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 160, -1));
 
         Jmostrar2.setBackground(new java.awt.Color(255, 255, 255));
         Jmostrar2.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         Jmostrar2.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(Jmostrar2);
-        Jmostrar2.setBounds(910, 390, 230, 40);
+        getContentPane().add(Jmostrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 390, 230, -1));
 
         jTextFieldV3.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldV3.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
         jTextFieldV3.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextFieldV3);
-        jTextFieldV3.setBounds(230, 520, 310, 40);
+        getContentPane().add(jTextFieldV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 310, -1));
 
         jComboBoxV3.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         jComboBoxV3.setForeground(new java.awt.Color(255, 0, 51));
@@ -199,20 +190,17 @@ public class Registrar extends javax.swing.JFrame {
                 jComboBoxV3ItemStateChanged(evt);
             }
         });
-        getContentPane().add(jComboBoxV3);
-        jComboBoxV3.setBounds(690, 522, 170, 40);
+        getContentPane().add(jComboBoxV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 522, 170, 40));
 
         Jmostrar3.setBackground(new java.awt.Color(255, 255, 255));
         Jmostrar3.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         Jmostrar3.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(Jmostrar3);
-        Jmostrar3.setBounds(910, 520, 230, 40);
+        getContentPane().add(Jmostrar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 520, 230, -1));
 
         jTextFieldV2.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldV2.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
         jTextFieldV2.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextFieldV2);
-        jTextFieldV2.setBounds(220, 390, 310, 40);
+        getContentPane().add(jTextFieldV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 310, -1));
 
         jTextFieldV1.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldV1.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -222,30 +210,25 @@ public class Registrar extends javax.swing.JFrame {
                 jTextFieldV1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldV1);
-        jTextFieldV1.setBounds(220, 270, 310, 40);
+        getContentPane().add(jTextFieldV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 310, -1));
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Elija sus tres vehículos");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(730, 210, 340, 40);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 340, -1));
 
         jLabel4.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Ingrese su nombre:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 50, 310, 62);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, -1));
 
         jTextFieldNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
         jTextFieldNombre.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(370, 60, 350, 50);
+        getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 350, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-60, 0, 1810, 1310);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, -1, 1310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

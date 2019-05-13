@@ -34,13 +34,12 @@ public class OpcionesFinales extends javax.swing.JFrame {
 
         jButtonSalirFinal = new javax.swing.JButton();
         jButtonReportes = new javax.swing.JButton();
-        jButtonGuardarJuego = new javax.swing.JButton();
         jButtonNuevoJuego = new javax.swing.JButton();
         jButtonEstadisticas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonSalirFinal.setBackground(new java.awt.Color(0, 0, 0));
         jButtonSalirFinal.setFont(new java.awt.Font("Dubai Medium", 3, 36)); // NOI18N
@@ -51,8 +50,7 @@ public class OpcionesFinales extends javax.swing.JFrame {
                 jButtonSalirFinalActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalirFinal);
-        jButtonSalirFinal.setBounds(480, 700, 280, 70);
+        getContentPane().add(jButtonSalirFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 700, 280, 70));
 
         jButtonReportes.setBackground(new java.awt.Color(0, 0, 0));
         jButtonReportes.setFont(new java.awt.Font("Dubai Medium", 3, 36)); // NOI18N
@@ -63,20 +61,7 @@ public class OpcionesFinales extends javax.swing.JFrame {
                 jButtonReportesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonReportes);
-        jButtonReportes.setBounds(190, 200, 420, 80);
-
-        jButtonGuardarJuego.setBackground(new java.awt.Color(0, 0, 0));
-        jButtonGuardarJuego.setFont(new java.awt.Font("Dubai Medium", 3, 36)); // NOI18N
-        jButtonGuardarJuego.setForeground(new java.awt.Color(255, 0, 0));
-        jButtonGuardarJuego.setText("Guardar Juego");
-        jButtonGuardarJuego.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarJuegoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonGuardarJuego);
-        jButtonGuardarJuego.setBounds(200, 420, 420, 80);
+        getContentPane().add(jButtonReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 420, 80));
 
         jButtonNuevoJuego.setBackground(new java.awt.Color(0, 0, 0));
         jButtonNuevoJuego.setFont(new java.awt.Font("Dubai Medium", 3, 36)); // NOI18N
@@ -87,8 +72,7 @@ public class OpcionesFinales extends javax.swing.JFrame {
                 jButtonNuevoJuegoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonNuevoJuego);
-        jButtonNuevoJuego.setBounds(200, 310, 420, 80);
+        getContentPane().add(jButtonNuevoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 420, 80));
 
         jButtonEstadisticas.setBackground(new java.awt.Color(0, 0, 0));
         jButtonEstadisticas.setFont(new java.awt.Font("Dubai Medium", 3, 36)); // NOI18N
@@ -99,12 +83,10 @@ public class OpcionesFinales extends javax.swing.JFrame {
                 jButtonEstadisticasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEstadisticas);
-        jButtonEstadisticas.setBounds(180, 90, 440, 80);
+        getContentPane().add(jButtonEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 440, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/Nacis.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 800, 800);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,19 +101,14 @@ public class OpcionesFinales extends javax.swing.JFrame {
         nuevo.setSize(825, 866);
         dispose();
     }//GEN-LAST:event_jButtonNuevoJuegoActionPerformed
+
 /**
- * Método para ir a Guardar partida
- * @param evt 
- */
-    private void jButtonGuardarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarJuegoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarJuegoActionPerformed
-/**
- * Método para ir JFRAME reportes
+ * Método para ver reportes en html
  * @param evt 
  */
     private void jButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportesActionPerformed
         // TODO add your handling code here:
+        //exportar HTML
     }//GEN-LAST:event_jButtonReportesActionPerformed
 /**
  * Método para salir del juego
@@ -191,7 +168,6 @@ public class OpcionesFinales extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEstadisticas;
-    private javax.swing.JButton jButtonGuardarJuego;
     private javax.swing.JButton jButtonNuevoJuego;
     private javax.swing.JButton jButtonReportes;
     private javax.swing.JButton jButtonSalirFinal;

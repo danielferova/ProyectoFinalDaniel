@@ -5,8 +5,18 @@
  */
 package VistasInterfazD;
 
+
 import ClasesdelProyecto.EstadisticasV;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static proyectofinaldaniel.ProyectoFinalDaniel.pathVehiculosD;
+import static VistasInterfazD.CrearV.contenedor1;
+import static VistasInterfazD.CrearV.jTextFieldNombreV1;
 
 /**
  *
@@ -16,6 +26,7 @@ public class CrearV extends javax.swing.JFrame {
   public static LinkedList contenedor1 = new LinkedList();
     public int buscar;
     /**
+     * Constructor de clase crearv
      * Creates new form CrearAviones
      */
     public CrearV() {
@@ -39,7 +50,7 @@ public class CrearV extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        Ver_Armas2 = new javax.swing.JButton();
+        jButtonVehiculoscargar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jTextFieldTipoV = new javax.swing.JTextField();
         jComboBoxV1 = new javax.swing.JComboBox<>();
@@ -57,7 +68,7 @@ public class CrearV extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonRegresarTipos.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarTipos.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -68,49 +79,42 @@ public class CrearV extends javax.swing.JFrame {
                 jButtonRegresarTiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarTipos);
-        jButtonRegresarTipos.setBounds(60, 680, 260, 100);
+        getContentPane().add(jButtonRegresarTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 680, 260, 100));
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 255, 0));
         jLabel4.setText("Crear Vehículos");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(580, 70, 470, 40);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 470, 40));
 
         jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ingrese Velocidad:");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(190, 530, 420, 40);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 420, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/aviones.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(400, 20, 620, 150);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 620, 150));
 
         jLabel11.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Ingrese nombre del Vehículo:");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(20, 330, 510, 40);
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 510, -1));
 
-        Ver_Armas2.setBackground(new java.awt.Color(255, 255, 255));
-        Ver_Armas2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        Ver_Armas2.setForeground(new java.awt.Color(51, 255, 0));
-        Ver_Armas2.setText("Armas");
-        Ver_Armas2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVehiculoscargar.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonVehiculoscargar.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jButtonVehiculoscargar.setForeground(new java.awt.Color(51, 255, 0));
+        jButtonVehiculoscargar.setText("Vehículos");
+        jButtonVehiculoscargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ver_Armas2ActionPerformed(evt);
+                jButtonVehiculoscargarActionPerformed(evt);
             }
         });
-        getContentPane().add(Ver_Armas2);
-        Ver_Armas2.setBounds(950, 540, 170, 90);
+        getContentPane().add(jButtonVehiculoscargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 170, 90));
 
         jLabel10.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Ingrese Defensa:");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(210, 480, 420, 40);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 420, -1));
 
         jTextFieldTipoV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTipoV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -120,8 +124,7 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldTipoVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTipoV);
-        jTextFieldTipoV.setBounds(490, 240, 310, 40);
+        getContentPane().add(jTextFieldTipoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 310, -1));
 
         jComboBoxV1.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
         jComboBoxV1.setForeground(new java.awt.Color(255, 0, 51));
@@ -136,8 +139,7 @@ public class CrearV extends javax.swing.JFrame {
                 jComboBoxV1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxV1);
-        jComboBoxV1.setBounds(200, 230, 270, 60);
+        getContentPane().add(jComboBoxV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 270, 60));
 
         jTextFieldVelocidadV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldVelocidadV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -147,8 +149,7 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldVelocidadVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldVelocidadV);
-        jTextFieldVelocidadV.setBounds(490, 530, 310, 40);
+        getContentPane().add(jTextFieldVelocidadV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 310, -1));
 
         jTextFieldNombreV1.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombreV1.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -158,8 +159,7 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldNombreV1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNombreV1);
-        jTextFieldNombreV1.setBounds(490, 330, 310, 40);
+        getContentPane().add(jTextFieldNombreV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 310, -1));
 
         jTextFieldPunteriaV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPunteriaV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -169,8 +169,7 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldPunteriaVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPunteriaV);
-        jTextFieldPunteriaV.setBounds(490, 380, 310, 40);
+        getContentPane().add(jTextFieldPunteriaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 310, -1));
 
         jTextFieldDefensaV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDefensaV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -180,20 +179,17 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldDefensaVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDefensaV);
-        jTextFieldDefensaV.setBounds(490, 480, 310, 40);
+        getContentPane().add(jTextFieldDefensaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 310, -1));
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ingrese Puntería:");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(210, 380, 420, 40);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 420, -1));
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Ingrese Ataque:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(230, 430, 420, 40);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 420, -1));
 
         jTextFieldAtaqueV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAtaqueV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -203,14 +199,12 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldAtaqueVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAtaqueV);
-        jTextFieldAtaqueV.setBounds(490, 430, 310, 40);
+        getContentPane().add(jTextFieldAtaqueV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 310, -1));
 
         jLabel7.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("COSTO DEL VEHÍCULO:");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(140, 590, 420, 40);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 420, -1));
 
         jTextFieldCostoV.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCostoV.setFont(new java.awt.Font("Ebrima", 3, 24)); // NOI18N
@@ -220,8 +214,7 @@ public class CrearV extends javax.swing.JFrame {
                 jTextFieldCostoVActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCostoV);
-        jTextFieldCostoV.setBounds(490, 590, 310, 40);
+        getContentPane().add(jTextFieldCostoV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 590, 310, -1));
 
         jButtonGuardarV.setBackground(new java.awt.Color(255, 255, 255));
         jButtonGuardarV.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
@@ -232,22 +225,43 @@ public class CrearV extends javax.swing.JFrame {
                 jButtonGuardarVActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGuardarV);
-        jButtonGuardarV.setBounds(490, 680, 510, 110);
+        getContentPane().add(jButtonGuardarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 670, 510, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1810, 1300);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Ingrese Ataque:");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(220, 410, 420, 40);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 420, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método Crear Binario
+     */ 
+    public void createBinario(){
+        ObjectOutputStream binario = null;
+        try {
+            String nameFile = jTextFieldNombreV1.getText();
+            File file = new File(nameFile);
+            EstadisticasV gun = (EstadisticasV) contenedor1.getLast();
+           
+            binario = new ObjectOutputStream(new FileOutputStream(pathVehiculosD+gun.getNombreV()+".ar"));
+            binario.writeObject(gun);
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+           // Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                binario.close();
+            } catch (IOException ex) {
+                Logger.getLogger(CrearV.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
     private void jTextFieldNombreV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreV1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreV1ActionPerformed
@@ -263,7 +277,10 @@ public class CrearV extends javax.swing.JFrame {
     private void jTextFieldCostoVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCostoVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCostoVActionPerformed
-
+/**
+ * Boton que guarda mis vehículos
+ * @param evt 
+ */
     private void jButtonGuardarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarVActionPerformed
         // TODO add your handling code here:
       
@@ -293,7 +310,10 @@ public class CrearV extends javax.swing.JFrame {
          jTextFieldDefensaV.setText("");
           jTextFieldVelocidadV.setText("");
            jTextFieldCostoV.setText("");
-      
+           
+           
+               EstadisticasV arma = (EstadisticasV)contenedor1.getLast();
+        createBinario();
     }//GEN-LAST:event_jButtonGuardarVActionPerformed
 
     private void jTextFieldDefensaVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDefensaVActionPerformed
@@ -303,7 +323,10 @@ public class CrearV extends javax.swing.JFrame {
     private void jTextFieldVelocidadVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVelocidadVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldVelocidadVActionPerformed
-
+/**
+ * Retorna a tienda
+ * @param evt 
+ */
     private void jButtonRegresarTiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarTiposActionPerformed
         // TODO add your handling code here:
         //Persona persona = new Persona(jTextFieldNombre.getText() );
@@ -314,23 +337,12 @@ public class CrearV extends javax.swing.JFrame {
 
         setSize(1290, 1000);
         dispose();
-        /*  String nombre = jTextFieldNombre.getText();
-        String v1 = jTextFieldV1.getText();
-        String v2 = jTextFieldV2.getText();
-        String v3 = jTextFieldV3.getText();
-        String tipo1 = Jmostrar1.getText();
-        String tipo2 = Jmostrar2.getText();
-        String tipo3 = Jmostrar3.getText();
-        //NOMBRE DE LA PERSONA ATRUBUTOS
-        Persona  person = new Persona(nombre, v1, v2, v3, tipo1, tipo2, tipo3);
-        contenedor.add(person);
-        //Limpia
-        jTextFieldNombre.setText("");
-        jTextFieldV1.setText("");
-        jTextFieldV2.setText("");
-        jTextFieldV3.setText("");*/
+     
     }//GEN-LAST:event_jButtonRegresarTiposActionPerformed
-
+/**
+ * Es de donde la info del comboBox la uso en un textfield
+ * @param evt 
+ */
     private void jComboBoxV1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxV1ItemStateChanged
         // TODO add your handling code here:
         this.jTextFieldTipoV.setText("= "+jComboBoxV1.getSelectedItem().toString());
@@ -345,7 +357,7 @@ public class CrearV extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldTipoVActionPerformed
 
-    private void Ver_Armas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ver_Armas2ActionPerformed
+    private void jButtonVehiculoscargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVehiculoscargarActionPerformed
 
         CrearV a = new CrearV();
         a.show();
@@ -355,7 +367,7 @@ public class CrearV extends javax.swing.JFrame {
         new VEstadisticas().setVisible(true);// TODO add your handling code here:
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_Ver_Armas2ActionPerformed
+    }//GEN-LAST:event_jButtonVehiculoscargarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,11 +406,9 @@ public class CrearV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Ver_Armas;
-    private javax.swing.JButton Ver_Armas1;
-    private javax.swing.JButton Ver_Armas2;
     private javax.swing.JButton jButtonGuardarV;
     private javax.swing.JButton jButtonRegresarTipos;
+    private javax.swing.JButton jButtonVehiculoscargar;
     private javax.swing.JComboBox<String> jComboBoxV1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -410,12 +420,12 @@ public class CrearV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextFieldAtaqueV;
-    private javax.swing.JTextField jTextFieldCostoV;
-    private javax.swing.JTextField jTextFieldDefensaV;
-    private javax.swing.JTextField jTextFieldNombreV1;
-    private javax.swing.JTextField jTextFieldPunteriaV;
-    private javax.swing.JTextField jTextFieldTipoV;
-    private javax.swing.JTextField jTextFieldVelocidadV;
+    public static javax.swing.JTextField jTextFieldAtaqueV;
+    public static javax.swing.JTextField jTextFieldCostoV;
+    public static javax.swing.JTextField jTextFieldDefensaV;
+    public static javax.swing.JTextField jTextFieldNombreV1;
+    public static javax.swing.JTextField jTextFieldPunteriaV;
+    public static javax.swing.JTextField jTextFieldTipoV;
+    public static javax.swing.JTextField jTextFieldVelocidadV;
     // End of variables declaration//GEN-END:variables
 }

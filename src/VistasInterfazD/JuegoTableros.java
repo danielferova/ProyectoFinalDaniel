@@ -59,7 +59,7 @@ public class JuegoTableros extends javax.swing.JFrame {
         lblImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonHaciaE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonHaciaE.setFont(new java.awt.Font("Dubai", 3, 24)); // NOI18N
@@ -70,26 +70,24 @@ public class JuegoTableros extends javax.swing.JFrame {
                 jButtonHaciaEActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonHaciaE);
-        jButtonHaciaE.setBounds(930, 770, 200, 80);
+        getContentPane().add(jButtonHaciaE, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 770, 200, 80));
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Generar Tablero");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(670, 10, 340, 40);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 340, 40));
 
         jButton8x9.setBackground(new java.awt.Color(255, 255, 255));
         jButton8x9.setFont(new java.awt.Font("Dubai Medium", 0, 36)); // NOI18N
         jButton8x9.setForeground(new java.awt.Color(0, 255, 0));
+        jButton8x9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/tanquepequeño.jpg"))); // NOI18N
         jButton8x9.setText("8 x 9");
         jButton8x9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8x9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8x9);
-        jButton8x9.setBounds(840, 370, 140, 60);
+        getContentPane().add(jButton8x9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 360, 170));
 
         jButton4x4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4x4.setFont(new java.awt.Font("Dubai Medium", 0, 36)); // NOI18N
@@ -101,20 +99,19 @@ public class JuegoTableros extends javax.swing.JFrame {
                 jButton4x4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4x4);
-        jButton4x4.setBounds(670, 70, 340, 130);
+        getContentPane().add(jButton4x4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 340, 160));
 
         jButton6x4.setBackground(new java.awt.Color(255, 255, 255));
         jButton6x4.setFont(new java.awt.Font("Dubai Medium", 0, 36)); // NOI18N
         jButton6x4.setForeground(new java.awt.Color(0, 255, 0));
+        jButton6x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/avionpequeño.jpg"))); // NOI18N
         jButton6x4.setText("6  x 4");
         jButton6x4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6x4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6x4);
-        jButton6x4.setBounds(670, 220, 340, 130);
+        getContentPane().add(jButton6x4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 350, 140));
 
         panelTablero.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -129,12 +126,10 @@ public class JuegoTableros extends javax.swing.JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panelTablero);
-        panelTablero.setBounds(30, 30, 580, 500);
+        getContentPane().add(panelTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(lblImg);
-        lblImg.setBounds(0, 0, 1810, 1300);
+        getContentPane().add(lblImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -256,7 +251,12 @@ public class JuegoTableros extends javax.swing.JFrame {
          tablero[a][a2].setIcon(iconoAvion);
         juego[a][a2] = 4;
         
-        
+         int z = (int) (Math.random()*4);
+        int z2 = (int) (Math.random()*4);
+            ImageIcon avion1 = new ImageIcon("src/ImagenesD/avionpequeño.jpg");
+        Icon iconoAvion1 = new ImageIcon(avion1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+         tablero[z][z2].setIcon(iconoAvion1);
+        juego[z][z2] = 4;
         
     /*tablero = new Casilla[filas][columnas];
     int contX=-1,contY=-1;

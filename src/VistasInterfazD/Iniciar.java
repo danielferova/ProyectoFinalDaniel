@@ -43,7 +43,7 @@ public class Iniciar extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonTienda1.setBackground(new java.awt.Color(0, 0, 0));
         jButtonTienda1.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -54,8 +54,7 @@ public class Iniciar extends javax.swing.JFrame {
                 jButtonTienda1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonTienda1);
-        jButtonTienda1.setBounds(240, 350, 360, 110);
+        getContentPane().add(jButtonTienda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 360, 110));
 
         jButtonRBienvenido.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRBienvenido.setFont(new java.awt.Font("Copperplate Gothic Bold", 3, 18)); // NOI18N
@@ -66,8 +65,7 @@ public class Iniciar extends javax.swing.JFrame {
                 jButtonRBienvenidoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRBienvenido);
-        jButtonRBienvenido.setBounds(40, 730, 160, 50);
+        getContentPane().add(jButtonRBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 730, 160, 50));
 
         jButtonSiguiente2.setBackground(new java.awt.Color(0, 0, 0));
         jButtonSiguiente2.setFont(new java.awt.Font("Copperplate Gothic Bold", 3, 36)); // NOI18N
@@ -78,8 +76,7 @@ public class Iniciar extends javax.swing.JFrame {
                 jButtonSiguiente2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSiguiente2);
-        jButtonSiguiente2.setBounds(260, 200, 340, 110);
+        getContentPane().add(jButtonSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 340, 110));
 
         jButtonTienda.setBackground(new java.awt.Color(0, 0, 0));
         jButtonTienda.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -90,22 +87,18 @@ public class Iniciar extends javax.swing.JFrame {
                 jButtonTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonTienda);
-        jButtonTienda.setBounds(290, 490, 250, 140);
+        getContentPane().add(jButtonTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 250, 140));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Seleccione una opción");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(190, 20, 500, 80);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 500, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/Nacis.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 970, 800);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, -1));
 
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(120, 60, 41, 16);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

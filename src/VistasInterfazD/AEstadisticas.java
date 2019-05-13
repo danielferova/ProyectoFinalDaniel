@@ -5,10 +5,9 @@
  */
 package VistasInterfazD;
 
-
-import ClasesdelProyecto.EstadisticasV;
-import static VistasInterfazD.CrearV.contenedor1;
-import static VistasInterfazD.CrearV.jTextFieldNombreV1;
+import ClasesdelProyecto.ArmasD;
+import static VistasInterfazD.CrearArmas.contenedor2;
+import static VistasInterfazD.CrearArmas.jTextFieldNombreArma;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,26 +15,27 @@ import java.io.ObjectInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-import static proyectofinaldaniel.ProyectoFinalDaniel.pathVehiculosD;
+import static proyectofinaldaniel.ProyectoFinalDaniel.pathArmasD;
 
 /**
  *
  * @author danie
  */
-public class VEstadisticas extends javax.swing.JFrame {
+public class AEstadisticas extends javax.swing.JFrame {
 private DefaultTableModel modelo;
-    int cont = 0; //contador
+    int cont = 0;//contador armas
     /**
-     * Constructor de vehículos sus esta
-     * Creates new form VEstadisticas
+     * Constructor de las estadísticas de las armas
+     * Creates new form AEstadisticas
      */
-    public VEstadisticas() {
+    public AEstadisticas() {
         initComponents();
         setSize(1490, 1200);
         setTitle("FEROVA GAME");
-        CargarRegistrarV();
-        readBinarioV();
-        CargardatosV();
+        CargarRegistrarA();
+         readBinarioD();
+        CargardatosA();
+        
     }
 
     /**
@@ -47,20 +47,15 @@ private DefaultTableModel modelo;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jButtonRegresarE = new javax.swing.JButton();
         jButtonSalirE = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableEstadisticasV = new javax.swing.JTable();
+        jTableEstadisticasA = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Gill Sans MT Condensed", 3, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel2.setText("Vehículos");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 210, 70));
 
         jButtonRegresarE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -71,7 +66,7 @@ private DefaultTableModel modelo;
                 jButtonRegresarEActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 770, 240, 100));
+        getContentPane().add(jButtonRegresarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 840, 240, 100));
 
         jButtonSalirE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalirE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -82,59 +77,69 @@ private DefaultTableModel modelo;
                 jButtonSalirEActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalirE, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 780, 270, 110));
+        getContentPane().add(jButtonSalirE, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 860, 270, 110));
 
-        jTableEstadisticasV.setBackground(new java.awt.Color(255, 255, 255));
-        jTableEstadisticasV.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
-        jTableEstadisticasV.setForeground(new java.awt.Color(0, 0, 0));
-        jTableEstadisticasV.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT Condensed", 3, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel2.setText("ARMAS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 210, 70));
+
+        jTableEstadisticasA.setBackground(new java.awt.Color(255, 255, 255));
+        jTableEstadisticasA.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
+        jTableEstadisticasA.setForeground(new java.awt.Color(0, 0, 0));
+        jTableEstadisticasA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Tipo", "Nombre", "Puntería", "Ataque", "Defensa", "Velocidad", "CostoV"
+                "Nombre", "Punteria", "Ataque", "Ataque"
             }
         ));
-        jScrollPane1.setViewportView(jTableEstadisticasV);
+        jScrollPane1.setViewportView(jTableEstadisticasA);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 980, 540));
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * Método para registrar los vehículos
+ * Método para registrar mis datos de Tienda
  */
-    public void CargarRegistrarV(){
+    public void CargarRegistrarA(){
     String datos [][]= {};
-    String columna[]= {"Nombre", "Nombre Vehículo1", "Tipo", "Nombre Vehículo2","Tipo","Nombre Vehículo3", "Tipo"};
-    String columna1[] = { "V1" };
+    String columna[]= {"Nombre", "Punteria", "Ataque", "CostoA"};
+    //String columna1[] = { "V1" };
     
     modelo= new DefaultTableModel(datos, columna);
-    jTableEstadisticasV.setModel(modelo);
+    jTableEstadisticasA.setModel(modelo);
     
 }
-/**
- * Método para leerlo Binario
- */
- public void readBinarioV(){
-        contenedor1.clear();
+    /**
+     * Método para leerlo de forma binaria
+     */
+     public void readBinarioD(){
+        contenedor2.clear();
         ObjectInputStream binario = null;
         try {
-            String nameFile = jTextFieldNombreV1.getText();
-            File filevehiculos = new File("VehiculosD");
+            String nameFile = jTextFieldNombreArma.getText();
+            File filearma = new File("ArmasD");
             
             
             
-            for (String string3:filevehiculos.list()) {
+            for (String string2:filearma.list()) {
                 
-                binario = new ObjectInputStream(new FileInputStream(pathVehiculosD+string3));
-                EstadisticasV d = (EstadisticasV) binario.readObject();
-                contenedor1.add(d);
+                binario = new ObjectInputStream(new FileInputStream(pathArmasD+string2));
+                ArmasD ar = (ArmasD) binario.readObject();
+                contenedor2.add(ar);
                 
             }
+            
+            
+            
+            
         } catch (Exception e) {
             e.printStackTrace();
            // Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
@@ -142,28 +147,26 @@ private DefaultTableModel modelo;
             try {
                 binario.close();
             } catch (IOException e) {
-                Logger.getLogger(CrearV.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(CrearArmas.class.getName()).log(Level.SEVERE, null, e);
             }
         }
         
     } 
- /**
-  * Método para cargardatos de los vehiculos
-  */
- public void CargardatosV(){
-                EstadisticasV a;
+     /**
+      * Método para cargar los datos de las armas
+      */
+     public void CargardatosA(){
+                ArmasD a;
                 //Registrar b;
-                for (int i = 0; i < CrearV.contenedor1.size(); i++) {
-                    a= (EstadisticasV)CrearV.contenedor1.get(i);
+                for (int i = 0; i < CrearArmas.contenedor2.size(); i++) {
+                    a= (ArmasD)CrearArmas.contenedor2.get(i);
                   //  b= (Registrar) Registrar.contenedor.get(i);
                     modelo.insertRow(cont, new Object []{ });
-                    modelo.setValueAt(a.getTipoV(), cont, 0);
-                    modelo.setValueAt(a.getNombreV(), cont, 1);
-                    modelo.setValueAt(a.getPunteriaV(), cont, 2);
-                    modelo.setValueAt(a.getAtaqueV(), cont, 3);
-                     modelo.setValueAt(a.getDefensaV(), cont, 4);
-                     modelo.setValueAt(a.getVelocidadV(), cont, 5);
-                             modelo.setValueAt(a.getCostoV(), cont, 6);
+                    modelo.setValueAt(a.getNombreA(), cont, 0);
+                    modelo.setValueAt(a.getPunteriaA(), cont, 1);
+                    modelo.setValueAt(a.getAtaqueA(), cont, 2);
+                    modelo.setValueAt(a.getCostoA(), cont, 3);
+                 
                      
                     
                     
@@ -173,16 +176,16 @@ private DefaultTableModel modelo;
                 
                 
             }
- /**
-  * Método para salir del juego
-  * @param evt 
-  */
+    /**
+     * Método para salir del juego
+     * @param evt 
+     */
     private void jButtonSalirEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirEActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirEActionPerformed
 /**
- * Método para regresar a Tienda
+ * Método para regresaar a Tienda 
  * @param evt 
  */
     private void jButtonRegresarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarEActionPerformed
@@ -211,20 +214,20 @@ private DefaultTableModel modelo;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AEstadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VEstadisticas().setVisible(true);
+                new AEstadisticas().setVisible(true);
             }
         });
     }
@@ -235,6 +238,10 @@ private DefaultTableModel modelo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableEstadisticasV;
+    private javax.swing.JTable jTableEstadisticasA;
     // End of variables declaration//GEN-END:variables
+
+    String getArma() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

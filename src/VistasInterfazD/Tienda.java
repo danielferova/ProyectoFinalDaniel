@@ -40,14 +40,13 @@ public class Tienda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Seleccione alguna opción");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(210, 10, 410, 70);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 410, 70));
 
         jButtonComprar.setBackground(new java.awt.Color(0, 0, 0));
         jButtonComprar.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -58,8 +57,7 @@ public class Tienda extends javax.swing.JFrame {
                 jButtonComprarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonComprar);
-        jButtonComprar.setBounds(280, 400, 250, 90);
+        getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 250, 90));
 
         jButtonIR2.setBackground(new java.awt.Color(0, 0, 0));
         jButtonIR2.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -70,8 +68,7 @@ public class Tienda extends javax.swing.JFrame {
                 jButtonIR2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIR2);
-        jButtonIR2.setBounds(500, 580, 250, 90);
+        getContentPane().add(jButtonIR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 580, 250, 90));
 
         jButtonCrearA.setBackground(new java.awt.Color(0, 0, 0));
         jButtonCrearA.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -82,8 +79,7 @@ public class Tienda extends javax.swing.JFrame {
                 jButtonCrearAActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCrearA);
-        jButtonCrearA.setBounds(280, 280, 250, 90);
+        getContentPane().add(jButtonCrearA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 250, 90));
 
         jButtonCrearV.setBackground(new java.awt.Color(0, 0, 0));
         jButtonCrearV.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -94,8 +90,7 @@ public class Tienda extends javax.swing.JFrame {
                 jButtonCrearVActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCrearV);
-        jButtonCrearV.setBounds(280, 160, 250, 90);
+        getContentPane().add(jButtonCrearV, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 250, 90));
 
         jButtonRTienda.setBackground(new java.awt.Color(0, 0, 0));
         jButtonRTienda.setFont(new java.awt.Font("Gill Sans MT", 3, 24)); // NOI18N
@@ -106,12 +101,10 @@ public class Tienda extends javax.swing.JFrame {
                 jButtonRTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRTienda);
-        jButtonRTienda.setBounds(50, 580, 250, 90);
+        getContentPane().add(jButtonRTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 250, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/Nacis.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 800, 800);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

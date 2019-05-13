@@ -48,7 +48,7 @@ abstract public class Vehiculos extends JButton{
         this.avion = avion;
     }
     /**
-     * Constructor
+     * Constructor de vehiculos
      * @param hp
      * @param pp
      * @param nivel

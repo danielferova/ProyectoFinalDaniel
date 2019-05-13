@@ -35,10 +35,10 @@ public class PartidasD extends javax.swing.JFrame {
          this.setLocationRelativeTo(null);
         setSize(1490, 1200);
         setTitle("FEROVA GAME");
-        
+        readBin1(); 
         CargarRegistrar();
         Cargardatos();
-readBin1();    
+   
     }
     /**
      * Método para colocoar en mi JTABLE
@@ -135,7 +135,7 @@ public void CargarRegistrar(){
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableEstadisticas1.setFont(new java.awt.Font("Dubai", 3, 18)); // NOI18N
         jTableEstadisticas1.setModel(new javax.swing.table.DefaultTableModel(
@@ -148,8 +148,7 @@ public void CargarRegistrar(){
         ));
         jScrollPane1.setViewportView(jTableEstadisticas1);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 170, 1170, 550);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 1170, 550));
 
         jButtonCargar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonCargar.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -169,8 +168,7 @@ public void CargarRegistrar(){
                 jButtonCargarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCargar);
-        jButtonCargar.setBounds(530, 890, 230, 100);
+        getContentPane().add(jButtonCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 910, 230, 100));
 
         jButtonRegresarE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegresarE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -181,8 +179,7 @@ public void CargarRegistrar(){
                 jButtonRegresarEActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresarE);
-        jButtonRegresarE.setBounds(90, 900, 240, 100);
+        getContentPane().add(jButtonRegresarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 900, 240, 100));
 
         jButtonSalirE.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalirE.setFont(new java.awt.Font("Dubai", 3, 36)); // NOI18N
@@ -193,18 +190,15 @@ public void CargarRegistrar(){
                 jButtonSalirEActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalirE);
-        jButtonSalirE.setBounds(930, 900, 270, 110);
+        getContentPane().add(jButtonSalirE, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 900, 270, 110));
 
         jLabel2.setFont(new java.awt.Font("Gill Sans MT Condensed", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 255, 0));
         jLabel2.setText("Datos del juego");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(540, 70, 210, 70);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 210, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesD/FinesseGrande.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1810, 1310);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
